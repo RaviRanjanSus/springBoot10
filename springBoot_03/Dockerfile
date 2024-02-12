@@ -1,6 +1,9 @@
-FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+COPY target/springBoot_03.jar springBoot_03.jar
+
+ENTRYPOINT ["java", "-jar", "springBoot_03.jar"]
 
 Expose 9090
