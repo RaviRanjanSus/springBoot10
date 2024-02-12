@@ -1,9 +1,9 @@
-FROM openjdk:11-jre-slim
+FROM adoptopenjdk/openjdk11:alpine-jre
 
 WORKDIR /app
 
-COPY target/springBoot_03.jar springBoot_03.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java", "-jar", "springBoot_03.jar"]
+EXPOSE 8080
 
-Expose 9090
+ENTRYPOINT ["java", "-jar", "app.jar"]
